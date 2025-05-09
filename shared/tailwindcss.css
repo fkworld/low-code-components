@@ -1,0 +1,67 @@
+@theme {
+  --spacing: 4px;
+
+  --font-weight-*: initial;
+
+  --text-*: initial;
+  --text-size-h1: 32px;
+  --text-size-h2: 24px;
+  --text-size-h3: 20px;
+  --text-size-h4: 18px;
+  --text-size-b1: 16px;
+  --text-size-b2: 14px;
+  --text-size-s1: 12px;
+
+  --color-*: initial;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-transparent: transparent;
+  --color-b3: #00000008;
+  --color-b3-final: #f7f7f7;
+  --color-b6: #0000000f;
+  --color-b6-final: #f0f0f0;
+  --color-b9: #00000017;
+  --color-b9-final: #e8e8e8;
+  --color-b12: #0000001f;
+  --color-b12-final: #e0e0e0;
+  --color-b20: #00000033;
+  --color-b20-final: #cccccc;
+  --color-b30: #0000004d;
+  --color-b30-final: #b2b2b2;
+  --color-b50: #00000080;
+  --color-b50-final: #7f7f7f;
+  --color-b70: #000000b2;
+  --color-b70-final: #4d4d4d;
+  --color-b90: #000000e5;
+  --color-b90-final: #1a1a1a;
+  --color-w10: #ffffff1a;
+  --color-w10-final: #1a1a1a;
+  --color-w20: #ffffff33;
+  --color-w20-final: #333333;
+  --color-w30: #ffffff4d;
+  --color-w30-final: #4d4d4d;
+  --color-w40: #ffffff66;
+  --color-w40-final: #666666;
+  --color-w50: #ffffff80;
+  --color-w50-final: #808080;
+  --color-w60: #ffffff99;
+  --color-w60-final: #999999;
+  --color-w70: #ffffffb2;
+  --color-w70-final: #b2b2b2;
+  --color-w80: #ffffffcc;
+  --color-w80-final: #cccccc;
+  --color-w90: #ffffffe5;
+  --color-w90-final: #e5e5e5;
+  --color-r1: #ff3b30;
+  --color-r2: #ff3b301a;
+  --color-o1: #ff9500;
+  --color-o2: #ff95001a;
+  --color-g1: #34c759;
+  --color-g2: #34c7641a;
+  --color-b1: #007aff;
+  --color-b2: #007aff1a;
+  --color-v1: #5856d6;
+  --color-v2: #5856d61a;
+  --color-p1: #af52de;
+  --color-p2: #af52de1a;
+}
