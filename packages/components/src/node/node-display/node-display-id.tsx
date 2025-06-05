@@ -4,9 +4,14 @@ import type { FC } from "react";
 import { BaseErrorSmall } from "../../base/base-error-small";
 import { useIdNameOptions } from "../../utils/id-name-options/id-name-options";
 import { isMatchId } from "../../utils/id-name-options/match-utils";
-import type { NodeProps } from "../node-types";
+import type { BaseNodeProps } from "../node-types";
 
-export const NodeDisplayId: FC<NodeProps<"displayId">> = (props) => {
+export const NodeDisplayId: FC<
+  BaseNodeProps<string | number> & {
+    type: "displayId";
+    showType?: "text" | "tag" | "status";
+  }
+> = (props) => {
   const { value, options, getOptions, showType = "text" } = props;
 
   const { idNameOptions, idNameOptionsLoading, idNameOptionsError } = useIdNameOptions({ options, getOptions });

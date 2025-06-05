@@ -1,8 +1,12 @@
 import type { FC } from "react";
 
-import type { NodeProps } from "../node-types";
+import type { BaseNodeProps } from "../node-types";
 
-export const NodeDisplayText: FC<NodeProps<"displayText">> = (props) => {
+export const NodeDisplayText: FC<
+  BaseNodeProps<string | number> & {
+    type: "displayText";
+  }
+> = (props) => {
   const { value } = props;
 
   if (!value && value !== 0) {

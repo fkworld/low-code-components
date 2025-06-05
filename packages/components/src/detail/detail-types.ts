@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import type { Paths } from "type-fest";
 
-import type { NodePropsAll } from "../node/node-types";
+import type { NodeProps } from "../node/node";
 
 export type DetailProps<T> = {
   items?: Array<DetailItemProps<T>>;
@@ -23,5 +23,5 @@ export type DetailItemProps<T> = {
   content?: ReactNode;
   contentCustomRender?: (data: T | undefined) => ReactNode;
   valueKey?: Paths<T>;
-  valueNodeProps?: NodePropsAll;
+  valueNodeProps?: NodeProps;
 };

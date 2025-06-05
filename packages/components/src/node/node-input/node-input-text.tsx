@@ -2,9 +2,13 @@ import { useControllableValue } from "ahooks";
 import { Input } from "antd";
 import type { FC } from "react";
 
-import type { NodeProps } from "../node-types";
+import type { BaseNodeProps } from "../node-types";
 
-export const NodeInputText: FC<NodeProps<"inputText">> = (props) => {
+export const NodeInputText: FC<
+  BaseNodeProps<string> & {
+    type: "inputText";
+  }
+> = (props) => {
   const [value, onChange] = useControllableValue<(typeof props)["value"]>(props);
   const { placeholder, readonly, disabled } = props;
 
