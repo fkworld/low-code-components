@@ -50,7 +50,14 @@ export default [
     },
   },
   {
-    files: ["apps/*/src/pages/*/index.tsx", "apps/*/src/layouts/*/index.tsx", "**/*.config.ts", "**/*.config.js"],
+    files: [
+      "apps/*/src/pages/*/index.tsx",
+      "apps/*/src/layouts/*/index.tsx",
+      "**/*.config.ts",
+      "**/*.config.js",
+      "**/*.stories.tsx",
+      "apps/docs/.storybook/*",
+    ],
     rules: {
       "import/no-default-export": "off",
     },

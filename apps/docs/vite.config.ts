@@ -1,10 +1,17 @@
-import type { UserConfig } from "vite";
-import { mergeConfig } from "vite";
+import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
 
-import { VITE_CONFIG } from "../../shared/vite-config";
-
-export default mergeConfig<UserConfig, UserConfig>(VITE_CONFIG, {
-  server: {
-    open: "/",
+export default defineConfig({
+  plugins: [react(), storybookTest()],
+  test: {
+    name: "storybook",
+    browser: {
+      enabled: true,
+      headless: true,
+      provider: "playwright",
+      instances: [{ browser: "chromium" }],
+    },
+    setupFiles: [".storybook/vitest.setup.ts"],
   },
 });

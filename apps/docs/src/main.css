@@ -1,7 +1,0 @@
-@import "../../../shared/base.css" layer(custom);
-
-@import "tailwindcss" layer(tailwindcss);
-@import "../../../shared/tailwindcss.css";
-@source "../node_modules/components";
-
-@layer tailwindcss, antd, custom;
