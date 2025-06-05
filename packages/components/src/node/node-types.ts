@@ -6,6 +6,10 @@ type PortalNodeParams = {
   displayText: {
     value: string | number;
   };
+  displayId: {
+    value: string | number;
+    showType?: "text" | "status" | "tag";
+  };
 
   inputText: {
     value: string;

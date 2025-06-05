@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Node } from "components";
 import { expect } from "storybook/test";
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof Node> = {
   title: "Node-Display/NodeDisplayText",
   component: Node,
