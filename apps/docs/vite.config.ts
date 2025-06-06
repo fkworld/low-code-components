@@ -1,9 +1,10 @@
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
+import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: [react(), storybookTest()],
+  plugins: [tailwindcss(), react(), storybookTest()],
   test: {
     name: "storybook",
     browser: {

@@ -1,5 +1,5 @@
 import { QuestionCircleOutlined } from "@ant-design/icons";
-import { Tooltip } from "antd";
+import { Popover } from "antd";
 import type { FC, ReactNode } from "react";
 
 export const BaseHelper: FC<{
@@ -12,12 +12,12 @@ export const BaseHelper: FC<{
   }
 
   return (
-    <Tooltip title={helper}>
+    <Popover content={helper}>
       <QuestionCircleOutlined
         style={{
           color: "var(--color-b70)",
         }}
       />
-    </Tooltip>
+    </Popover>
   );
 };

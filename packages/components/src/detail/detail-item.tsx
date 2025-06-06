@@ -8,33 +8,33 @@ export function DetailItem<T>(props: { data: T | undefined; item: DetailItemProp
   const {
     data,
     item: {
-      customRender: itemCustomRender,
-      columnSpan: itemColumnSpan = 1,
+      itemSpan = 1,
+      customRender,
       label,
       labelCustomRender,
       labelHelper,
       labelHelperCustomRender,
       labelSecondary,
       labelSecondaryCustomRender,
-      valueKey,
-      valueNodeProps,
+      contentNodeValueKey,
+      contentNodeProps,
       content,
       contentCustomRender,
     } = {},
   } = props;
 
-  if (itemCustomRender) {
-    return itemCustomRender(data);
+  if (customRender) {
+    return customRender(data);
   }
 
   const labelString = labelCustomRender ? labelCustomRender(data) : label;
   const labelHelperNode = labelHelperCustomRender ? labelHelperCustomRender(data) : labelHelper;
   const labelSecondaryNode = labelSecondaryCustomRender ? labelSecondaryCustomRender(data) : labelSecondary;
-  const contentNode = valueKey ? (
+  const contentNode = contentNodeValueKey ? (
     <Node
-      type={valueNodeProps?.type || "displayText"}
-      {...valueNodeProps}
-      value={get(data, valueKey)}
+      type={contentNodeProps?.type || "displayText"}
+      {...contentNodeProps}
+      value={get(data, contentNodeValueKey)}
     />
   ) : contentCustomRender ? (
     contentCustomRender(data)
@@ -45,11 +45,11 @@ export function DetailItem<T>(props: { data: T | undefined; item: DetailItemProp
   return (
     <div
       style={{
-        gridColumn: `span ${itemColumnSpan ?? 1}`,
+        gridColumn: `span ${itemSpan}`,
       }}
     >
-      <div className="text-b50">
-        <span>{labelString}</span>
+      <div>
+        <span className="text-b50">{labelString}</span>
         <span> </span>
         <BaseHelper helper={labelHelperNode} />
       </div>

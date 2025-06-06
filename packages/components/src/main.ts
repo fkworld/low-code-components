@@ -4,3 +4,4 @@ export { BaseNullSmall } from "./base/base-null-small";
 export { Detail } from "./detail/detail";
 export type { DetailItemProps, DetailProps } from "./detail/detail-types";
 export { Node } from "./node/node";
+export { defineProps } from "./utils/define-props";

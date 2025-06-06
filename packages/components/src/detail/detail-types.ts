@@ -10,8 +10,9 @@ export type DetailProps<T> = {
 };
 
 export type DetailItemProps<T> = {
+  itemSpan?: number;
+
   customRender?: (data: T | undefined) => ReactNode;
-  columnSpan?: number;
 
   label?: string;
   labelCustomRender?: (data: T | undefined) => string;
@@ -20,8 +21,8 @@ export type DetailItemProps<T> = {
   labelSecondary?: ReactNode;
   labelSecondaryCustomRender?: (data: T | undefined) => ReactNode;
 
+  contentNodeValueKey?: Paths<T>;
+  contentNodeProps?: NodeProps;
   content?: ReactNode;
   contentCustomRender?: (data: T | undefined) => ReactNode;
-  valueKey?: Paths<T>;
-  valueNodeProps?: NodeProps;
 };

@@ -1,3 +1,5 @@
+import "../src/main.css";
+
 import type { Preview } from "@storybook/react-vite";
 
 export default {

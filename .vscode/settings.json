@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["autodocs"],
+  "cSpell.words": ["antd", "autodocs"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },

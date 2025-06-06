@@ -13,6 +13,7 @@
     "@storybook/addon-vitest": "^9.0.4",
     "@storybook/react-vite": "^9.0.4",
     "@vitejs/plugin-react": "^4.4.1",
+    "antd": "^5.25.4",
     "components": "workspace:^",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
