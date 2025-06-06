@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Node } from "components";
 import { expect } from "storybook/test";
 
-import { wait } from "./utils/wait";
+import { wait } from "../../utils/wait";
 
 const meta: Meta<typeof Node> = {
   title: "Node-Display/NodeDisplayId",
