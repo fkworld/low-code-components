@@ -5,19 +5,10 @@ import { expect } from "storybook/test";
 const meta: Meta<typeof Node> = {
   title: "Node-Display/NodeDisplayText",
   component: Node,
-  tags: ["autodocs"],
   argTypes: {
     type: {
       control: false,
-      table: {
-        defaultValue: {
-          summary: "displayText",
-        },
-      },
     },
-  },
-  args: {
-    type: "displayText",
   },
 };
 

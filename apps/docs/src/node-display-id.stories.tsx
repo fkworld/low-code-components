@@ -7,7 +7,6 @@ import { wait } from "./utils/wait";
 const meta: Meta<typeof Node> = {
   title: "Node-Display/NodeDisplayId",
   component: Node,
-  tags: ["autodocs"],
   argTypes: {
     type: {
       control: false,
