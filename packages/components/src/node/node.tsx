@@ -3,12 +3,14 @@ import type { ComponentProps, FC } from "react";
 import { NodeDisplayId } from "./node-display/node-display-id";
 import { NodeDisplayText } from "./node-display/node-display-text";
 import { NodeDisplayTime } from "./node-display/node-display-time";
+import { NodeDisplayTitle } from "./node-display/node-display-title";
 import { NodeInputText } from "./node-input/node-input-text";
 
 const NODES = {
   displayId: NodeDisplayId,
   displayText: NodeDisplayText,
   displayTime: NodeDisplayTime,
+  displayTitle: NodeDisplayTitle,
   inputText: NodeInputText,
 } as const;
 

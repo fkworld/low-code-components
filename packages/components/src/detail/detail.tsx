@@ -1,8 +1,11 @@
 import { DetailItem } from "./detail-item";
-import type { DetailProps } from "./detail-types";
+import type { UseDetailProps } from "./detail-types";
+import { useDetail } from "./use-detail";
 
-export function Detail<T>(props: DetailProps<T>) {
-  const { items, data, columnsCount = 3 } = props;
+export function Detail<T>(props: UseDetailProps<T>) {
+  const {
+    detailIns: { data, columnsCount = 3, getItems },
+  } = useDetail(props);
 
   return (
     <div
@@ -11,12 +14,12 @@ export function Detail<T>(props: DetailProps<T>) {
         gridTemplateColumns: `repeat(${columnsCount}, minmax(0, 1fr))`,
       }}
     >
-      {items?.map((item, itemIndex) => {
+      {getItems()?.map((itemIns) => {
         return (
           <DetailItem
-            key={String(item.label) + "__" + itemIndex}
+            key={itemIns.id}
             data={data}
-            item={item}
+            itemIns={itemIns}
           />
         );
       })}

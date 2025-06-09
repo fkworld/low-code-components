@@ -2,14 +2,15 @@ import { get } from "lodash-es";
 
 import { BaseHelper } from "../base/base-helper";
 import { Node } from "../node/node";
-import type { DetailItemProps } from "./detail-types";
+import type { DetailItemIns } from "./detail-types";
 
-export function DetailItem<T>(props: { data: T | undefined; item: DetailItemProps<T> }) {
+export function DetailItem<T>(props: { data: T | undefined; itemIns: DetailItemIns<T> }) {
+  const { data, itemIns } = props;
+
   const {
-    data,
-    item: {
+    itemDef: {
       itemSpan = 1,
-      customRender,
+      itemCustomRender,
       label,
       labelCustomRender,
       labelHelper,
@@ -20,11 +21,35 @@ export function DetailItem<T>(props: { data: T | undefined; item: DetailItemProp
       contentNodeProps,
       content,
       contentCustomRender,
-    } = {},
-  } = props;
+    },
+  } = itemIns;
 
-  if (customRender) {
-    return customRender(data);
+  if (!itemIns.getIsFinalExpanded()) {
+    return null;
+  }
+
+  if (itemCustomRender) {
+    return (
+      <div
+        style={{
+          gridColumn: `span ${itemSpan}`,
+        }}
+      >
+        {itemCustomRender(data)}
+      </div>
+    );
+  }
+
+  if (contentNodeProps?.type === "displayTitle") {
+    return (
+      <div className="col-span-full">
+        <Node
+          {...contentNodeProps}
+          collapsed={itemIns.getIsSelfExpanded()}
+          onToggleCollapsed={itemIns.toggleExpanded}
+        />
+      </div>
+    );
   }
 
   const labelString = labelCustomRender ? labelCustomRender(data) : label;

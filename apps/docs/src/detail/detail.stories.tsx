@@ -112,7 +112,7 @@ export const LabelSecondary: StoryObj<typeof Detail<typeof data>> = {
   },
 };
 
-export const CustomItem: StoryObj<typeof Detail<typeof data>> = {
+export const CustomRender: StoryObj<typeof Detail<typeof data>> = {
   args: {
     data: data,
     items: [
@@ -126,7 +126,7 @@ export const CustomItem: StoryObj<typeof Detail<typeof data>> = {
       },
       {
         label: "字段3",
-        customRender: () => {
+        itemCustomRender: () => {
           return <div>整体自定义渲染</div>;
         },
       },
@@ -143,5 +143,93 @@ export const CustomItem: StoryObj<typeof Detail<typeof data>> = {
     await expect(canvas.getByText("整体自定义渲染")).toBeInTheDocument();
     await expect(canvas.getByText("字段4")).toBeInTheDocument();
     await expect(canvas.getByText("内容自定义渲染")).toBeInTheDocument();
+  },
+};
+
+export const ExpandTitle: StoryObj<typeof Detail<typeof data>> = {
+  args: {
+    data: data,
+    items: [
+      {
+        contentNodeValueKey: "field1",
+        contentNodeProps: {
+          type: "displayTitle",
+          title: "1 标题",
+        },
+      },
+      {
+        label: "字段1",
+        contentNodeValueKey: "field1",
+      },
+      {
+        contentNodeValueKey: "field1",
+        contentNodeProps: {
+          type: "displayTitle",
+          title: "1.1 标题",
+          level: 2,
+        },
+      },
+      {
+        label: "字段2",
+        contentNodeValueKey: "field2",
+      },
+      {
+        contentNodeValueKey: "field1",
+        contentNodeProps: {
+          type: "displayTitle",
+          title: "1.1.1 标题",
+          level: 3,
+        },
+      },
+      {
+        label: "字段3",
+        content: <div>字段3内容</div>,
+      },
+      {
+        label: "字段4",
+        content: <div>字段4内容</div>,
+      },
+    ],
+  },
+  play: async ({ canvas, canvasElement, userEvent }) => {
+    expect(canvasElement).toHaveTextContent("1 标题");
+    expect(canvasElement).toHaveTextContent("字段1");
+    expect(canvasElement).toHaveTextContent("1.1 标题");
+    expect(canvasElement).toHaveTextContent("字段2");
+    expect(canvasElement).toHaveTextContent("1.1.1 标题");
+    expect(canvasElement).toHaveTextContent("字段3");
+    expect(canvasElement).toHaveTextContent("字段4");
+
+    await userEvent.click(canvas.getByText("1.1.1 标题").nextSibling as HTMLElement);
+
+    expect(canvasElement).toHaveTextContent("1 标题");
+    expect(canvasElement).toHaveTextContent("字段1");
+    expect(canvasElement).toHaveTextContent("1.1 标题");
+    expect(canvasElement).toHaveTextContent("字段2");
+    expect(canvasElement).toHaveTextContent("1.1.1 标题");
+    expect(canvasElement).not.toHaveTextContent("字段3");
+    expect(canvasElement).not.toHaveTextContent("字段4");
+
+    await userEvent.click(canvas.getByText("1.1 标题").nextSibling as HTMLElement);
+    expect(canvasElement).toHaveTextContent("1 标题");
+    expect(canvasElement).toHaveTextContent("字段1");
+    expect(canvasElement).toHaveTextContent("1.1 标题");
+    expect(canvasElement).not.toHaveTextContent("字段2");
+    expect(canvasElement).not.toHaveTextContent("1.1.1 标题");
+    expect(canvasElement).not.toHaveTextContent("字段3");
+    expect(canvasElement).not.toHaveTextContent("字段4");
+
+    await userEvent.click(canvas.getByText("1 标题").nextSibling as HTMLElement);
+    expect(canvasElement).toHaveTextContent("1 标题");
+    expect(canvasElement).not.toHaveTextContent("字段1");
+    expect(canvasElement).not.toHaveTextContent("1.1 标题");
+    expect(canvasElement).not.toHaveTextContent("字段2");
+    expect(canvasElement).not.toHaveTextContent("1.1.1 标题");
+    expect(canvasElement).not.toHaveTextContent("字段3");
+    expect(canvasElement).not.toHaveTextContent("字段4");
+
+    await userEvent.click(canvas.getByText("1 标题").nextSibling as HTMLElement);
+    await userEvent.click(canvas.getByText("1.1 标题").nextSibling as HTMLElement);
+    await userEvent.click(canvas.getByText("1.1.1 标题").nextSibling as HTMLElement);
   },
 };

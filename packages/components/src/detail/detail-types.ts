@@ -3,16 +3,28 @@ import type { Paths } from "type-fest";
 
 import type { NodeProps } from "../node/node";
 
-export type DetailProps<T> = {
-  items?: Array<DetailItemProps<T>>;
+export type UseDetailProps<T> = {
   data?: T;
+  items?: Array<DetailItemDef<T>>;
   columnsCount?: number;
 };
 
-export type DetailItemProps<T> = {
-  itemSpan?: number;
+export type UseDetailResult<T> = {
+  detailIns: DetailIns<T>;
+};
 
-  customRender?: (data: T | undefined) => ReactNode;
+export type DetailIns<T> = {
+  data?: T;
+  items?: Array<DetailItemDef<T>>;
+  columnsCount?: number;
+  getItems: () => Array<DetailItemIns<T>>;
+};
+
+export type DetailItemDef<T> = {
+  id?: string;
+
+  itemSpan?: number;
+  itemCustomRender?: (data: T | undefined) => ReactNode;
 
   label?: string;
   labelCustomRender?: (data: T | undefined) => string;
@@ -21,8 +33,16 @@ export type DetailItemProps<T> = {
   labelSecondary?: ReactNode;
   labelSecondaryCustomRender?: (data: T | undefined) => ReactNode;
 
-  contentNodeValueKey?: Paths<T>;
-  contentNodeProps?: NodeProps;
   content?: ReactNode;
   contentCustomRender?: (data: T | undefined) => ReactNode;
+  contentNodeValueKey?: Paths<T>;
+  contentNodeProps?: NodeProps;
+};
+
+export type DetailItemIns<T> = {
+  id: string;
+  itemDef: DetailItemDef<T>;
+  toggleExpanded: (expanded?: boolean) => void;
+  getIsSelfExpanded: () => boolean;
+  getIsFinalExpanded: () => boolean;
 };
