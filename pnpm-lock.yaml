@@ -174,7 +174,7 @@ importers:
         version: 8.21.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@tanstack/zod-form-adapter':
         specifier: ^0.42.1
-        version: 0.42.1(zod@3.24.4)
+        version: 0.42.1(zod@3.25.56)
       ahooks:
         specifier: ^3.7.8
         version: 3.8.4(react@19.1.0)
@@ -203,8 +203,8 @@ importers:
         specifier: ^0.11.0
         version: 0.11.0(immer@10.1.1)(react@19.1.0)
       zod:
-        specifier: ^3.24.4
-        version: 3.24.4
+        specifier: ^3.25.56
+        version: 3.25.56
     devDependencies:
       '@types/lodash-es':
         specifier: ^4.17.12
@@ -1776,6 +1776,11 @@ packages:
 
   acorn@8.14.1:
     resolution: {integrity: sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+
+  acorn@8.15.0:
+    resolution: {integrity: sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -4625,8 +4630,8 @@ packages:
     peerDependencies:
       zod: ^3.24.1
 
-  zod@3.24.4:
-    resolution: {integrity: sha512-OdqJE9UDRPwWsrHjLN2F8bPxvwJBK22EHLWtanu0LSYr5YqzsaaW3RMgmjwr8Rypg5k+meEJdSPXJZXE/yqOMg==}
+  zod@3.25.56:
+    resolution: {integrity: sha512-rd6eEF3BTNvQnR2e2wwolfTmUTnp70aUTqr0oaGbHifzC3BKJsoV+Gat8vxUMR1hwOKBs6El+qWehrHbCpW6SQ==}
 
 snapshots:
 
@@ -5673,8 +5678,8 @@ snapshots:
       express-rate-limit: 7.5.0(express@5.1.0)
       pkce-challenge: 5.0.0
       raw-body: 3.0.0
-      zod: 3.24.4
-      zod-to-json-schema: 3.24.5(zod@3.24.4)
+      zod: 3.25.56
+      zod-to-json-schema: 3.24.5(zod@3.25.56)
     transitivePeerDependencies:
       - supports-color
 
@@ -6017,10 +6022,10 @@ snapshots:
 
   '@tanstack/table-core@8.21.3': {}
 
-  '@tanstack/zod-form-adapter@0.42.1(zod@3.24.4)':
+  '@tanstack/zod-form-adapter@0.42.1(zod@3.25.56)':
     dependencies:
       '@tanstack/form-core': 0.42.1
-      zod: 3.24.4
+      zod: 3.25.56
 
   '@testing-library/dom@10.4.0':
     dependencies:
@@ -6398,6 +6403,8 @@ snapshots:
       acorn: 8.14.1
 
   acorn@8.14.1: {}
+
+  acorn@8.15.0: {}
 
   agent-base@7.1.3: {}
 
@@ -7277,7 +7284,7 @@ snapshots:
       minimatch: 3.1.2
       natural-compare: 1.4.0
       optionator: 0.9.4
-      zod: 3.24.4
+      zod: 3.25.56
     optionalDependencies:
       jiti: 2.4.2
     transitivePeerDependencies:
@@ -9136,7 +9143,7 @@ snapshots:
   terser@5.39.0:
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.14.1
+      acorn: 8.15.0
       commander: 2.20.3
       source-map-support: 0.5.21
 
@@ -9642,8 +9649,8 @@ snapshots:
 
   yocto-queue@1.2.1: {}
 
-  zod-to-json-schema@3.24.5(zod@3.24.4):
+  zod-to-json-schema@3.24.5(zod@3.25.56):
     dependencies:
-      zod: 3.24.4
+      zod: 3.25.56
 
-  zod@3.24.4: {}
+  zod@3.25.56: {}

@@ -9,6 +9,7 @@ export const BaseErrorSmall: FC<{
       <Tag
         bordered={false}
         color="red"
+        style={{ marginRight: 0 }}
       >
         ERROR
       </Tag>

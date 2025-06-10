@@ -1,5 +1,6 @@
 import type { ComponentProps, FC } from "react";
 
+import { BaseErrorSmall } from "../base/base-error-small";
 import { NodeDisplayId } from "./node-display/node-display-id";
 import { NodeDisplayText } from "./node-display/node-display-text";
 import { NodeDisplayTime } from "./node-display/node-display-time";
@@ -22,7 +23,7 @@ export const Node: FC<NodeProps> = (props) => {
   const Component = NODES[type] as FC<NodeProps>;
 
   if (!Component) {
-    return <div>Error Node</div>;
+    return <BaseErrorSmall errorReason={`node.type=${type} 配置错误`} />;
   }
 
   return <Component {...props} />;

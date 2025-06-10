@@ -7,6 +7,6 @@
   "editor.formatOnSave": true,
   // see https://github.com/microsoft/vscode-eslint/issues/1669#issuecomment-2415840383
   "eslint.runtime": "node",
-  "tailwindCSS.experimental.configFile": "../shared/tailwindcss.css",
-  "typescript.tsdk": "../node_modules/typescript/lib"
+  "tailwindCSS.experimental.configFile": "shared/tailwindcss.css",
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

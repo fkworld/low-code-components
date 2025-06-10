@@ -24,7 +24,7 @@
     "immer": "^10.1.1",
     "lodash-es": "^4.17.21",
     "use-immer": "^0.11.0",
-    "zod": "^3.24.4"
+    "zod": "^3.25.56"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
