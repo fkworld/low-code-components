@@ -2,6 +2,8 @@
   --spacing: 4px;
 
   --font-weight-*: initial;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
 
   --text-*: initial;
   --text-size-h1: 32px;
