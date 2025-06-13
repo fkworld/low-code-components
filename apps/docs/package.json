@@ -9,6 +9,8 @@
     "test:lib": "vitest run --project=storybook"
   },
   "dependencies": {
+    "@ant-design/icons": "5.x",
+    "@ant-design/v5-patch-for-react-19": "^1.0.3",
     "@storybook/addon-docs": "^9.0.4",
     "@storybook/addon-vitest": "^9.0.4",
     "@storybook/react-vite": "^9.0.4",
