@@ -16,6 +16,5 @@ export default meta;
 export const Default: StoryObj<typeof Node> = {
   args: {
     type: "inputText",
-    value: "NodeInputText",
   },
 };

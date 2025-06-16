@@ -5,6 +5,7 @@ import { NodeDisplayId } from "./node-display/node-display-id";
 import { NodeDisplayText } from "./node-display/node-display-text";
 import { NodeDisplayTime } from "./node-display/node-display-time";
 import { NodeDisplayTitle } from "./node-display/node-display-title";
+import { NodeInputSingleSelect } from "./node-input/node-input-single-select";
 import { NodeInputText } from "./node-input/node-input-text";
 
 const NODES = {
@@ -13,6 +14,7 @@ const NODES = {
   displayTime: NodeDisplayTime,
   displayTitle: NodeDisplayTitle,
   inputText: NodeInputText,
+  inputSingleSelect: NodeInputSingleSelect,
 } as const;
 
 export type NodeProps = ComponentProps<(typeof NODES)[keyof typeof NODES]>;
